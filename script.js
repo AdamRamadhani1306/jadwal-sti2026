@@ -1,5 +1,5 @@
 /* ============================================================
-   script.js — Jadwal STI ITB PGRI Dewantara
+   script.js — Jadwal STI ITEBIS PGRI Dewantara
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
