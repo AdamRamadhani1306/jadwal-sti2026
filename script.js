@@ -43,16 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle schedule & filter visibility
     if (cls === 'A') {
-      scheduleA.classList.remove('hidden');
-      scheduleB.classList.add('hidden');
-      filterInnerA.classList.remove('hidden');
-      filterInnerB.classList.add('hidden');
+      scheduleA.style.display  = '';
+      scheduleB.style.display  = 'none';
+      filterInnerA.style.display = '';
+      filterInnerB.style.display = 'none';
       document.body.classList.remove('class-b');
     } else {
-      scheduleA.classList.add('hidden');
-      scheduleB.classList.remove('hidden');
-      filterInnerA.classList.add('hidden');
-      filterInnerB.classList.remove('hidden');
+      scheduleA.style.display  = 'none';
+      scheduleB.style.display  = '';
+      filterInnerA.style.display = 'none';
+      filterInnerB.style.display = '';
       document.body.classList.add('class-b');
     }
 
