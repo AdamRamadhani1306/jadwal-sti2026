@@ -462,3 +462,26 @@ body.class-b .orb-2 {
   .class-btn { padding: 7px 16px; font-size: 0.8rem; }
   .switcher-label { display: none; }
 }
+
+/* ---- INFO CARD ONLINE ---- */
+.info-card-online {
+  border-color: rgba(0, 212, 255, 0.25);
+  background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(124,58,237,0.06));
+  position: relative;
+  overflow: hidden;
+}
+.info-card-online::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--cyan), var(--violet));
+  border-radius: 3px 0 0 3px;
+}
+.info-card-online:hover {
+  border-color: rgba(0,212,255,0.45);
+  box-shadow: 0 0 20px rgba(0,212,255,0.08);
+}
+.text-online {
+  color: var(--cyan);
+  font-style: normal;
+}
