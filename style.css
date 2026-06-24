@@ -1,5 +1,5 @@
 /* ============================================================
-   JADWAL STI — ITEBIS PGRI Dewantara
+   JADWAL STI — ITB PGRI Dewantara
    Color palette from logo: cyan-blue to violet/purple
    ============================================================ */
 
@@ -399,4 +399,66 @@ body {
   .logo-inst { display: none; }
   .day-header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CLASS SWITCHER — Kelas A / Kelas B
+   ============================================================ */
+
+.class-switcher-wrap {
+  position: relative; z-index: 1;
+  padding: 0 24px 10px;
+}
+.class-switcher-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 14px;
+}
+.switcher-label {
+  font-size: 0.8rem; color: var(--muted);
+  font-weight: 500; white-space: nowrap;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.class-switcher {
+  display: flex;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+.class-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 22px; border-radius: 999px;
+  border: none; cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.class-btn:hover {
+  color: var(--text);
+  background: var(--glass2);
+}
+.class-btn.active {
+  background: linear-gradient(135deg, rgba(0,212,255,0.25), rgba(124,58,237,0.25));
+  border: 1px solid rgba(0,212,255,0.45);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(0,212,255,0.15);
+}
+.class-btn-icon { font-size: 1rem; }
+
+/* Kelas B accent — orb warna sedikit berbeda */
+body.class-b .orb-1 {
+  background: radial-gradient(circle, #a855f7, transparent 70%);
+}
+body.class-b .orb-2 {
+  background: radial-gradient(circle, var(--blue), transparent 70%);
+}
+
+@media (max-width: 480px) {
+  .class-switcher-wrap { padding-left: 16px; padding-right: 16px; }
+  .class-btn { padding: 7px 16px; font-size: 0.8rem; }
+  .switcher-label { display: none; }
 }
