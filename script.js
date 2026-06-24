@@ -132,10 +132,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init observers for both schedules
   setupObserver(scheduleA);
   setupObserver(scheduleB);
+
+  // Info cards — observer terpisah dengan threshold sangat rendah agar pasti muncul
+  const infoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        infoObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.01, rootMargin: '0px 0px -10px 0px' });
+
   document.querySelectorAll('.info-card').forEach(el => {
     el.style.opacity    = '0';
     el.style.transform  = 'translateY(16px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    infoObserver.observe(el);
   });
 
   /* ── Highlight current day ── */
